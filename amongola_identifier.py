@@ -7,8 +7,15 @@ from PIL import Image
 image = Image.open('amongus_trashcan.jpg')
 
 #Convert it to gray-scale
+#image_grayscale = image.convert('L')
 image_grayscale = image.convert('L')
 
-#Show the image
+#Outline to be overlayed
+amongus_outline = Image.open('amongus_outline.png')
+  
+#Pasting outline on top of image
+#starting at coordinates (0, 0)
+image.paste(amongus_outline, (0,0), mask = amongus_outline)
+  
+# Displaying the image
 image.show()
-image_grayscale.show()
