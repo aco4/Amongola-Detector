@@ -66,7 +66,12 @@ for contour in contours:
     if len(approx) > 6:
         pil_image = Image.open('among_us_insanity.jpg')
         pil_overlay = Image.open('amongus_outline.png')
-        image.paste(pil_overlay, (x,y), mask = pil_overlay)
+        pil_image.paste(pil_overlay, (x,y), mask = pil_overlay)
+        
+        
+pil_image.show()
+
+input()
 
 # displaying the image after drawing contours
 cv2.imshow('shapes', image)
